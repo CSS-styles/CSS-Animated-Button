@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626ff;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height:100px;
+	width:300px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 40px black;
+    cursor: pointer;
+    overflow: hidden;
+}
+div::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 300px;
+	left: 90%;
+	bottom: 80%;
+	background-color: royalblue;
+	z-index: -1;
+}
+div:hover::after{
+	animation: anime 0.5s linear forwards;
+}
+div::before{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 300px;
+	right: 90%;
+	top: 80%;
+	background-color: royalblue;
+	z-index: -1;
+}
+div:hover::before{
+	animation: box 0.5s linear forwards;
+}
+div:hover{
+	animation: button 0.5s linear 0.5s forwards;
+}
+@keyframes anime{
+	0%{
+		border-radius: 10px;
+	}
+	 100%{
+	 	bottom: 0;
+	 	box-shadow: 1px 1px 40px royalblue;
+	 }
+}
+@keyframes box{
+	0%{
+		border-radius: 10px;
+	}
+	 100%{
+	 	top: 0;
+	 	box-shadow: 1px 1px 40px royalblue;
+	 }
+}
+@keyframes button{
+	 100%{
+	 	background-color: royalblue;
+	 	box-shadow: 1px 1px 40px royalblue;
+	 }
+}
